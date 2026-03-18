@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Food Forest – Fine Restaurant</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+<header id="navbar">
+  <div class="logo1">
+    <img src="images/logo_final.png" alt="Food 'N' Fun Logo" class="logo-img1">
+    Food 'N' Fun 
+  </div>
+  <nav>
+  
+<a href="home.html#home" class="home-btn">Home</a>
+<a href="home.html#menu" class="menu-btn">Menu</a>
+<a href="home.html#about" class="about-btn">About</a>
+<a href="#contact" class="contact-btn">Contact</a>
+  </nav>
+</header>
+
+
+<section class="soup-menu">
+  <div class="soup-card-full">
+    <h2>Curries Menu</h2>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterSoups('all')">All</button>
+      <button class="filter-btn" onclick="filterSoups('veg')">Veg</button>
+      <button class="filter-btn" onclick="filterSoups('nonveg')">Non-Veg</button>
+    </div>
+
+    <!-- Soups List -->
+    <div class="soups-list">
+      <!-- Veg Soups -->
+      <div class="soup-category veg">
+        <h3>🥦 Veg Curries</h3>
+
+        <p><span class="soup-name">Plain Palak</span> <span class="soup-price">₹220</span></p>
+        <p><span class="soup-name">Aloo Mattar</span> <span class="soup-price">₹230</span></p>
+        <p><span class="soup-name">Veg Kofta Curry</span> <span class="soup-price">₹230</span></p>
+        <p><span class="soup-name">Mixed Veg Curry</span> <span class="soup-price">₹220</span></p>
+        <p><span class="soup-name">Veg Kurma</span> <span class="soup-price">₹220</span></p>
+        <p><span class="soup-name">Veg Dopiaza</span> <span class="soup-price">₹250</span></p>
+        <p><span class="soup-name">Veg Kolhapuri</span> <span class="soup-price">₹250</span></p>
+        <p><span class="soup-name">Veg Jaipuri</span> <span class="soup-price">₹300</span></p>
+        <p><span class="soup-name">Veg Kadai</span> <span class="soup-price">₹250</span></p>
+        <p><span class="soup-name">Veg Chettinad</span> <span class="soup-price">₹270</span></p>
+
+        <p><span class="soup-name">Mushroom Curry</span> <span class="soup-price">₹270</span></p>
+        <p><span class="soup-name">Mushroom Masala Curry</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Mushroom Butter Masala</span> <span class="soup-price">₹390</span></p>
+        <p><span class="soup-name">Mushroom Dopiaza</span> <span class="soup-price">₹260</span></p>
+        <p><span class="soup-name">Mushroom Kadai</span> <span class="soup-price">₹260</span></p>
+        <p><span class="soup-name">Mushroom Chettinad</span> <span class="soup-price">₹280</span></p>
+
+        <p><span class="soup-name">Paneer Curry</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Veg Patiyala</span> <span class="soup-price">₹280</span></p>
+        <p><span class="soup-name">Paneer Methi Chaman Curry</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Paneer Kofta</span> <span class="soup-price">₹300</span></p>
+        <p><span class="soup-name">Paneer Kadai</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Paneer Chettinad</span> <span class="soup-price">₹300</span></p>
+        <p><span class="soup-name">Palak Paneer</span> <span class="soup-price">₹300</span></p>
+        <p><span class="soup-name">Paneer Butter Masala</span> <span class="soup-price">₹300</span></p>
+        <p><span class="soup-name">Paneer Tikka Masala</span> <span class="soup-price">₹320</span></p>
+        <p><span class="soup-name">Paneer Dopiaza</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Paneer Hyderabadi</span> <span class="soup-price">₹290</span></p>
+
+        <p><span class="soup-name">Kaju Curry</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Kaju Masala</span> <span class="soup-price">₹300</span></p>
+        <p><span class="soup-name">Kaju Capsicum Masala</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Kaju Tomato Curry</span> <span class="soup-price">₹290</span></p>
+        <p><span class="soup-name">Kaju Paneer Curry</span> <span class="soup-price">₹320</span></p>
+
+      </div>
+
+      <!-- Non-Veg Curries -->
+      <div class="soup-category nonveg">
+        <h3>🍗 Non-Veg Curries</h3>
+
+        <p><span class="soup-name">Chicken Bone Curry</span> <span class="soup-price">₹320</span></p>
+        <p><span class="soup-name">Chicken Boneless Curry</span> <span class="soup-price">₹350</span></p>
+        <p><span class="soup-name">Punjabi Chicken Curry</span> <span class="soup-price">₹350</span></p>
+        <p><span class="soup-name">Andhra Chicken Curry</span> <span class="soup-price">₹350</span></p>
+        <p><span class="soup-name">Chicken Hyderabadi Curry</span> <span class="soup-price">₹350</span></p>
+
+        <p><span class="soup-name">Butter Chicken</span> <span class="soup-price">₹350</span></p>
+        <p><span class="soup-name">Kadai Chicken</span> <span class="soup-price">₹320</span></p>
+        <p><span class="soup-name">Chicken Dopiaza Curry</span> <span class="soup-price">₹320</span></p>
+        <p><span class="soup-name">Chicken Tikka Masala</span> <span class="soup-price">₹350</span></p>
+        <p><span class="soup-name">Chicken Tangdi Masala</span> <span class="soup-price">₹330</span></p>
+        <p><span class="soup-name">Chicken Kolhapuri</span> <span class="soup-price">₹340</span></p>
+        <p><span class="soup-name">Chicken Keema Masala</span> <span class="soup-price">₹360</span></p>
+        <p><span class="soup-name">Tandoori Masala</span> <span class="soup-price">₹340</span></p>
+        <p><span class="soup-name">Chicken Mughlai Curry</span> <span class="soup-price">₹360</span></p>
+        <p><span class="soup-name">Chicken Chettinad Curry</span> <span class="soup-price">₹360</span></p>
+        <p><span class="soup-name">Chicken Maharani</span> <span class="soup-price">₹360</span></p>
+        <p><span class="soup-name">Achari Chicken Curry</span> <span class="soup-price">₹350</span></p>
+        <p><span class="soup-name">Gongura Chicken Curry</span> <span class="soup-price">₹350</span></p>
+
+        <p><span class="soup-name">Prawns Curry</span> <span class="soup-price">₹380</span></p>
+        <p><span class="soup-name">Prawns Masala</span> <span class="soup-price">₹390</span></p>
+        <p><span class="soup-name">Prawns Kadai</span> <span class="soup-price">₹400</span></p>
+        <p><span class="soup-name">Prawns Kolhapuri</span> <span class="soup-price">₹380</span></p>
+
+        <p><span class="soup-name">Mutton Curry</span> <span class="soup-price">₹400</span></p>
+        <p><span class="soup-name">Mutton Masala</span> <span class="soup-price">₹380</span></p>
+        <p><span class="soup-name">Mutton Keema Masala</span> <span class="soup-price">₹390</span></p>
+        <p><span class="soup-name">Mutton Rogan Josh</span> <span class="soup-price">₹380</span></p>
+        <p><span class="soup-name">Mutton Mughlai</span> <span class="soup-price">₹400</span></p>
+        <p><span class="soup-name">Mutton Dopiaza</span> <span class="soup-price">₹380</span></p>
+        <p><span class="soup-name">Mutton Chettinad</span> <span class="soup-price">₹390</span></p>
+        <p><span class="soup-name">Mutton Hyderabadi</span> <span class="soup-price">₹380</span></p>
+
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <h2 > 📩 Contact Us</h2>
+
+    <p class="contact-number">☏ 9392226262</p>
+
+
+    
+
+<form class="contact-form">
+
+   <div class="contact-row">
+       <img  src="images/logo_final.png" alt="Food 'N' Fun Logo" class="logo-img" >
+    
+  </div>
+
+
+  <span class="contact-info">Designed &amp; Developed by Squadron4</span>
+
+  <!-- <div class="contact-row">
+    <img  src="images/Squadron4_logo.png" alt="Food 'N' Fun Logo" class="logo-img" >
+  </div> -->
+
+ 
+
+ 
+
+  <button type="submit" class="send-btn">Send Message</button>
+</form>
+  </div>
+</section>
+
+
+
+<footer>
+© 2025 Food Forest. All Rights Reserved.
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html> 

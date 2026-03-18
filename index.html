@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centered Logo With Snow</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  width:100%;
+  background:radial-gradient(circle,#ffffff,#e6f0ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  position:relative;
+}
+
+/* Logo Container */
+.logo-container{
+  width:250px;
+  height:250px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn 1.5s ease-in-out;
+  z-index:2;
+}
+
+/* Video */
+.logo-container video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+/* Fade Animation */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:scale(0.8);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* Snowflakes */
+.snowflake{
+  position:absolute;
+  top:-10px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  pointer-events:none;
+  animation:fall linear infinite;
+}
+
+/* Snow falling animation */
+@keyframes fall{
+  to{
+    transform:translateY(110vh) translateX(var(--x-move));
+  }
+}
+
+/* Mobile Responsive */
+@media(max-width:480px){
+  .logo-container{
+    width:150px;
+    height:150px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo-container">
+  <video autoplay muted playsinline>
+    <source src="bgvideo2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<script>
+// Snow generator
+const snowCount = 120;
+
+for(let i=0;i<snowCount;i++){
+  const snow = document.createElement("div");
+  snow.classList.add("snowflake");
+
+  const size = Math.random()*6 + 4;
+  snow.style.width = size + "px";
+  snow.style.height = size + "px";
+
+  snow.style.left = Math.random()*100 + "vw";
+
+  const duration = Math.random()*10 + 5;
+  snow.style.animationDuration = duration + "s";
+
+  snow.style.setProperty("--x-move",(Math.random()*60-30)+"px");
+
+  document.body.appendChild(snow);
+}
+
+// Redirect after 5 seconds
+setTimeout(()=>{
+  window.location.href="home.html";
+},5000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+// ==================== AUTO + MANUAL IMAGE SLIDER ====================
+const slider = document.getElementById("slider");
+if (slider) {
+  let currentIndex = 0;
+
+  function autoSlide() {
+    const slideCount = slider.children.length;
+    if (!slideCount) return;
+
+    currentIndex++;
+    if (currentIndex >= slideCount) {
+      currentIndex = 0;
+    }
+
+    slider.scrollTo({
+      left: currentIndex * window.innerWidth,
+      behavior: "smooth"
+    });
+  }
+
+  // Auto slide every 2 seconds
+  let slideInterval = setInterval(autoSlide, 2000);
+
+  // Stop auto slide when user scrolls manually
+  slider.addEventListener("touchstart", () => {
+    clearInterval(slideInterval);
+  });
+
+  // Restart autoplay after scroll
+  slider.addEventListener("touchend", () => {
+    slideInterval = setInterval(autoSlide, 2000);
+  });
+
+  // Also support mouse drag for desktop users
+  slider.addEventListener("mousedown", () => {
+    clearInterval(slideInterval);
+  });
+  slider.addEventListener("mouseup", () => {
+    slideInterval = setInterval(autoSlide, 2000);
+  });
+}
+
+
+// ==================== Smooth scroll to menu ====================
+const exploreBtn = document.getElementById("exploreBtn");
+exploreBtn?.addEventListener("click", () => {
+  document.querySelector("#menu").scrollIntoView({ behavior: "smooth" });
+});
+
+
+// ==================== Navbar animation on scroll ====================
+window.addEventListener("scroll", () => {
+  const nav = document.getElementById("navbar");
+  if (!nav) return;
+
+  if (window.scrollY > 80) {
+    nav.style.boxShadow = "0 2px 15px rgba(0,0,0,0.08)";
+  } else {    
+    nav.style.boxShadow = "none";
+  }
+});
+
+
+// ==================== Card hover sound effect ====================
+const cards = document.querySelectorAll('.card');
+const hoverSound = new Audio('https://www.soundjay.com/buttons/sounds/button-3.mp3');
+
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    hoverSound.currentTime = 0;
+    hoverSound.play();
+  });
+});
+
+
+// ==================== Contact form popup ====================
+const form = document.querySelector("form");
+form?.addEventListener("submit", function(e) {
+  e.preventDefault();
+  alert("Thank you! Your message has been sent.");
+  this.reset();
+});
+
+
+// ==================== Soups Filter Function ====================
+function filterSoups(category) {
+  const veg = document.querySelector('.soup-category.veg');
+  const nonveg = document.querySelector('.soup-category.nonveg');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  if (!veg || !nonveg) return;
+
+  // Highlight active button
+  buttons.forEach(btn => btn.classList.remove('active'));
+  if (category === 'all') buttons[0].classList.add('active');
+  else if (category === 'veg') buttons[1].classList.add('active');
+  else buttons[2].classList.add('active');
+
+  // Show/hide categories
+  veg.style.display = (category === 'all' || category === 'veg') ? 'block' : 'none';
+  nonveg.style.display = (category === 'all' || category === 'nonveg') ? 'block' : 'none';
+}
