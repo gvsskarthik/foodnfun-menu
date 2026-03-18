@@ -73,12 +73,19 @@ cards.forEach(card => {
 });
 
 
-// ==================== Contact form popup ====================
-const form = document.querySelector("form");
-form?.addEventListener("submit", function(e) {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent.");
-  this.reset();
+// ==================== Contact form WhatsApp redirect ====================
+const contactForms = document.querySelectorAll(".contact-form");
+const whatsappNumber = "919392226262";
+const whatsappMessage = encodeURIComponent(
+  "Hi Food 'N' Fun, I want to know more about your menu."
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+contactForms.forEach((form) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    window.location.href = whatsappUrl;
+  });
 });
 
 
