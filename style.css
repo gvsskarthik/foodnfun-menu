@@ -407,6 +407,14 @@ background: #632424;
   transform: scale(1.05);
 }
 
+footer {
+  padding: 18px 20px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+}
+
 
 @media (max-width: 768px) {
   .contact-title {

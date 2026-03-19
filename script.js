@@ -61,18 +61,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-// ==================== Card hover sound effect ====================
-const cards = document.querySelectorAll('.card');
-const hoverSound = new Audio('https://www.soundjay.com/buttons/sounds/button-3.mp3');
-
-cards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    hoverSound.currentTime = 0;
-    hoverSound.play();
-  });
-});
-
-
 // ==================== Contact form WhatsApp redirect ====================
 const contactForms = document.querySelectorAll(".contact-form");
 const whatsappNumber = "919392226262";
