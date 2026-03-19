@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centered Logo With Snow</title>
+<meta http-equiv="refresh" content="5; url=home.html">
+<title>Food 'N' Fun</title>
 
 <style>
 *{
@@ -79,6 +80,20 @@ body{
     height:150px;
   }
 }
+
+.fallback-link{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  font-size:16px;
+}
+
+.fallback-link a{
+  color:#0b5ed7;
+  font-weight:600;
+}
 </style>
 </head>
 
@@ -90,6 +105,10 @@ body{
     Your browser does not support the video tag.
   </video>
 </div>
+
+<noscript>
+  <p class="fallback-link"><a href="home.html">Continue to Food 'N' Fun</a></p>
+</noscript>
 
 <script>
 // Snow generator

@@ -98,10 +98,14 @@ function filterSoups(category) {
   if (!veg || !nonveg) return;
 
   // Highlight active button
-  buttons.forEach(btn => btn.classList.remove('active'));
-  if (category === 'all') buttons[0].classList.add('active');
-  else if (category === 'veg') buttons[1].classList.add('active');
-  else buttons[2].classList.add('active');
+  buttons.forEach(btn => btn.classList.remove('active', 'veg', 'nonveg'));
+  if (category === 'all') {
+    buttons[0].classList.add('active');
+  } else if (category === 'veg') {
+    buttons[1].classList.add('active', 'veg');
+  } else {
+    buttons[2].classList.add('active', 'nonveg');
+  }
 
   // Show/hide categories
   veg.style.display = (category === 'all' || category === 'veg') ? 'block' : 'none';
